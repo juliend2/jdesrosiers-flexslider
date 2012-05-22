@@ -55,7 +55,7 @@ function jdfs_register_cpt() {
     'capability_type' => 'post',  
     'hierarchical' => false,  
     'rewrite' => true,  
-    'supports' => array('title', 'editor', 'thumbnail'),
+    'supports' => array('title', 'thumbnail'),
     'taxonomies' => array('slider'),
     'register_meta_box_cb' => 'add_sliderimages_metaboxes'
   ));

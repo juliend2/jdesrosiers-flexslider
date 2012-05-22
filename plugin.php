@@ -38,20 +38,13 @@ function jdfs_get_slider($slider_slug='') {
   }
   query_posts($query);
   if (have_posts()) : while (have_posts()) : the_post();  
-    $thumb_id = get_post_thumbnail_id($post->ID);
-    $thumb_object = get_post($thumb_id);
+    $img = get_the_post_thumbnail($post->ID, 'large');  
     $url = get_post_meta($post->ID, '_url', true);
-    $slider .= '<li class="slide"><div class="slide-image">';
     if (!empty($url)) {
-      $slider .= '<a href="' . $url . '"><img src="' . $thumb_object->guid . '"/></a>';  
+      $slider .= '<li><a href="' . $url . '">' . $img . '</a></li>';  
     } else {
-      $slider .= '<img src="' . $thumb_object->guid . '"/>';  
+      $slider .= '<li>' . $img . '</li>';  
     }
-    $slider .= '</div>'; // end .slide-image
-    if (!empty($post->post_content)) {
-      $slider .= '<div class="slide-description">' . $post->post_content . '</div>';
-    }
-    $slider .= '</li>';
   endwhile; endif; wp_reset_query();  
   $slider .= '</ul></div>';
 
