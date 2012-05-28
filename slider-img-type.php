@@ -25,6 +25,7 @@ function jdes_sliderimage_url() {
 // Save the metabox data
 function jdes_save_sliderimage_meta($post_id, $post) {
   if ($post->post_type !== JDFS_CPT_TYPE) return $post;
+  if (empty($_POST)) return $post;
   // verify this came from the our screen and with proper authorization,
   // because save_post can be triggered at other times
   if ( !wp_verify_nonce($_POST['sliderimagemeta_noncename'], plugin_basename(__FILE__)) ) {

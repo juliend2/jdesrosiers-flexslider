@@ -32,7 +32,7 @@ function jdfs_script(){
 function jdfs_get_slider($slider_slug='') {
   global $post;
   $slider = '<div class="flexslider"><ul class="slides">';
-  $query = "post_type=" . JDFS_CPT_TYPE;
+  $query = "post_type=". JDFS_CPT_TYPE ."&orderby=menu_order&order=ASC";
   if ($slider_slug !== '') {
     $query .= "&slider=" . $slider_slug;
   }
