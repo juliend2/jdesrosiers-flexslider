@@ -22,7 +22,7 @@ function jdfs_enqueue_assets() {
 }
 
 function jdfs_script(){  
-  print '<script type="text/javascript" charset="utf-8"> 
+  print '<script type="text/javascript"> 
     jQuery(window).load(function() { 
       jQuery(".flexslider").flexslider(); 
     }); 
